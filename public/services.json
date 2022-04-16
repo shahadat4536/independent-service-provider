@@ -1,0 +1,23 @@
+[
+    {
+        "id": "625b07145e03d828c9df8ade",
+        "name": "Pimple Treatment",
+        "price": 500,
+        "description": "To treat, wash your face with an acne product that contains benzoyl peroxide or salicylic acid. Resist the temptation to pop these. It can worsen acne. If you don't see results from treatment in six to eight weeks, see a dermatologist.",
+        "img": "https://i.ibb.co/18j19dK/Pimple-Treatment.jpg"
+    },
+    {
+        "id": "625b071415ce299b44a78626",
+        "name": "Pimple Treatment",
+        "price": 500,
+        "description": "To treat, wash your face with an acne product that contains benzoyl peroxide or salicylic acid. Resist the temptation to pop these. It can worsen acne. If you don't see results from treatment in six to eight weeks, see a dermatologist.",
+        "img": "https://i.ibb.co/18j19dK/Pimple-Treatment.jpg"
+    },
+    {
+        "id": "625b07140f001181117c2218",
+        "name": "Pimple Treatment",
+        "price": 500,
+        "description": "To treat, wash your face with an acne product that contains benzoyl peroxide or salicylic acid. Resist the temptation to pop these. It can worsen acne. If you don't see results from treatment in six to eight weeks, see a dermatologist.",
+        "img": "https://i.ibb.co/18j19dK/Pimple-Treatment.jpg"
+    }
+]
