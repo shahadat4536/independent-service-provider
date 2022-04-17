@@ -10,6 +10,7 @@ const SocialSignIn = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
 
+    console.log(googleUser);
     // let errorElement;
 
     // console.log(googleError, githubError);

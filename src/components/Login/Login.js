@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SocialSignIn from '../SocialSignIn/SocialSignIn';
 import login from '../../image/login.jpg'
+import auth from '../../firebase.init';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+
+    const handleSignIn = (event) => {
+        event.preventDefault()
+        signInWithEmailAndPassword(email, password);
+
+
+    }
+
     return (
         <div style={{ width: '370px' }} className='mx-auto container mt-5 my-5 shadow-lg rounded-3 px-0 '>
             <img className='w-100 rounded-top' src={login} alt="" srcset="" />
@@ -13,13 +34,13 @@ const Login = () => {
                     <SocialSignIn></SocialSignIn>
                 </div>
                 <div>
-                    <Form>
+                    <Form onSubmit={handleSignIn}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="Enter email" required />
+                            <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Password" required />
+                            <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
                         </Form.Group>
                         <Button className='w-100 text-white' variant="info" type="submit">
                             Sign In

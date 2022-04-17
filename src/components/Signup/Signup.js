@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SocialSignIn from '../SocialSignIn/SocialSignIn';
 import login from '../../image/login.jpg';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const Signup = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    // const handleEmail = e => {
+
+    // }
+
+    // const handlePassword = e => {
+
+    // }
+
+    // const handleConfirmPassword = e => {
+
+    // }
+
+    const handleSignUp = (event) => {
+        event.preventDefault()
+        createUserWithEmailAndPassword(email, password);
+        setEmail('')
+        setPassword('')
+        setConfirmPassword('')
+    }
     return (
         <div style={{ width: '370px' }} className='mx-auto container mt-5 my-5 shadow-lg rounded-3 px-0 '>
             <img className='w-100 rounded-top' src={login} alt="" srcset="" />
@@ -15,16 +47,16 @@ const Signup = () => {
                     <SocialSignIn></SocialSignIn>
                 </div>
                 <div>
-                    <Form>
+                    <Form onSubmit={handleSignUp}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="Enter email" required />
+                            <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Password" required />
+                            <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Confirm Password" required />
+                            <Form.Control onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Confirm Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Accept terms and conditions" />
