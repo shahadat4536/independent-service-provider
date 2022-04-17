@@ -15,20 +15,17 @@ const Login = () => {
                 <div>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" placeholder="Enter email" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Accept terms and conditions" />
+                            <Form.Control type="password" placeholder="Password" required />
                         </Form.Group>
                         <Button className='w-100 text-white' variant="info" type="submit">
                             Sign In
                         </Button>
                     </Form>
-                    <div className='d-flex justify-content-between mt-2'>
+                    <div className='d-flex justify-content-between mt-3'>
                         <Link className='text-decoration-none text-center' to='/signup'>Create New Account</Link>
                         <Link className='text-decoration-none text-secondary' to="/forgotpassword">Forgot Password</Link>
                     </div>
