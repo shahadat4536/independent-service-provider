@@ -26,13 +26,13 @@ const Footer = () => {
             <div className='col-lg-6 col-sm-12 d-flex text-white justify-content-evenly fs-6 fw-light align-items-center'>
                 <div>
                     <h6>Follow me internet</h6>
-                    <a href="www.facebook.com">
+                    <a href="https://www.facebook.com/shahadatofficial007" target="_blank">
                         <img className='w-25 text-white' height={"30px"} src={facebook} alt="" srcset="" />
                     </a>
-                    <a href="www.facebook.com">
+                    <a href="https://twitter.com/Shahadat01954" target="_blank">
                         <img className='w-25 text-white' height={"30px"} src={twitter} alt="" srcset="" />
                     </a>
-                    <a href="www.facebook.com">
+                    <a href="https://www.youtube.com/channel/UCh-S5xZ3YRzhbkfugzr1Wrg" target="_blank">
                         <img className='w-25 text-white' height={"30px"} src={youtube} alt="" srcset="" />
                     </a>
 
