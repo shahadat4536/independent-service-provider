@@ -1,10 +1,24 @@
 # The Financial 360
 
+## Live Site Link [https://assignment-10-1507a.web.app]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Website Features
 
-## Live Site Link
-[https://assignment-10-1507a.web.app]
+- Single page Website.
+- Email & Password Authentcatin System.
+- Google & Github account use signin.
+- Email Verification System.
+- Password reset System. 
 
 
+
+## The type of framework and library used on this website
+
+- Reactjs
+- React router
+- React-bootstrap
+- Bootstrap 5.1
+- React Firebase Hooks - Auth
+- Firebase
+- React-Toastify
 
