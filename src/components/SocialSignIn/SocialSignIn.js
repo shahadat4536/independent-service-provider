@@ -4,12 +4,17 @@ import facebook from '../../image/social login/facebook.png'
 import github from '../../image/social login/github.png'
 import auth from '../../firebase.init';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const SocialSignIn = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
 
+
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location?.state?.from?.pathname || "/";
     console.log(googleUser);
     // let errorElement;
 
@@ -17,6 +22,10 @@ const SocialSignIn = () => {
     // if (googleError || githubError) {
     //     errorElement = <p>Error:{googleError?.githubError}</p>;
     // }
+
+    if (googleUser || githubUser) {
+        navigate(from, { replace: true });
+    }
     return (
         <div className='d-flex justify-content-end'>
             <button onClick={() => signInWithGoogle()} className='btn btn-link'>

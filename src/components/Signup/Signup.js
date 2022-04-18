@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialSignIn from '../SocialSignIn/SocialSignIn';
 import login from '../../image/login.jpg';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 
 const Signup = () => {
@@ -19,18 +20,23 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    // const handleEmail = e => {
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location?.state?.from?.pathname || "/";
 
-    // }
+    let errorElement;
 
-    // const handlePassword = e => {
+    if (error) {
+        errorElement = <p>{error.message}</p>;
+    }
 
-    // }
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
-    // const handleConfirmPassword = e => {
-
-    // }
-
+    if (loading) {
+        <Loading></Loading>
+    }
     const handleSignUp = (event) => {
         event.preventDefault()
         createUserWithEmailAndPassword(email, password);
@@ -65,6 +71,7 @@ const Signup = () => {
                             Sign Up
                         </Button>
                     </Form>
+                    {errorElement}
                     <div className='mt-3 text-center'>
                         <Link className='text-decoration-none ' to="/login">Already have an account</Link>
                     </div>

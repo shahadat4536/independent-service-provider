@@ -13,8 +13,10 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    console.log(error);
 
-    console.log(user);
+
+
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,12 +24,15 @@ const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();
     let from = location?.state?.from?.pathname || "/";
+    let errorElement;
 
+    if (error) {
+        errorElement = <p>{error.message}</p>;
+    }
 
 
     if (user) {
-        navigate('/home');
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
     }
 
     const handleSignIn = (event) => {
@@ -58,6 +63,7 @@ const Login = () => {
                             Sign In
                         </Button>
                     </Form>
+                    {errorElement}
                     <div className='d-flex justify-content-between mt-3'>
                         <Link className='text-decoration-none text-center' to='/signup'>Create New Account</Link>
                         <Link className='text-decoration-none text-secondary' to="/forgotpassword">Forgot Password</Link>
