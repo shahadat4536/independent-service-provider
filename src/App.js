@@ -10,10 +10,12 @@ import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Signup from './components/Signup/Signup';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import Blog from './components/Blog/Blog';
+import About from './components/About/About';
 
 function App() {
   return (
-    <div >
+    <div className='container'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -26,6 +28,8 @@ function App() {
             <Checkout></Checkout>
           </RequireAuth>
         }></Route>
+        <Route path='/about' element={<About></About>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
       </Routes>
     </div>
   );
