@@ -13,11 +13,12 @@ const Service = ({ service }) => {
                     <div className="card-body">
                         <h3 className="card-title">{name}</h3>
                         <p className="card-text text-justify">{description}</p>
-                        <h3 className='price'>$ {price}</h3>
 
-                        <div class="d-grid gap-2 button w-100">
-                            <Link className='text-decoration-none text-white' to="/checkout">
-                                <button class="btn btn-primary  d-block px-5  mb-3 text-center mx-auto w-75" type="button"> Book Now
+
+                        <div className="row button w-100">
+                            <h3 className='price text-center col-12'>Price:{price}</h3>
+                            <Link className='col-12 text-decoration-none text-white' to="/checkout">
+                                <button className="btn btn-primary  d-block px-5  mb-3 text-center mx-auto" type="button"> Book Now
                                 </button>
                             </Link>
 
