@@ -9,9 +9,9 @@ const Header = () => {
     const [user, loading, error] = useAuthState(auth);
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar className='sticky-top' bg="light" expand="lg">
             <Container className='sticky-top'>
-                <Navbar.Brand as={Link} to="home">Skin Solution</Navbar.Brand>
+                <Navbar.Brand as={Link} to="home">The Financial 360</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

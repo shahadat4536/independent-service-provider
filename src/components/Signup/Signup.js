@@ -13,7 +13,7 @@ const Signup = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -34,9 +34,9 @@ const Signup = () => {
     const handleSignUp = (event) => {
         event.preventDefault()
         createUserWithEmailAndPassword(email, password);
-        setEmail('')
-        setPassword('')
-        setConfirmPassword('')
+        // setEmail('')
+        // setPassword('')
+        // setConfirmPassword('')
     }
     return (
         <div style={{ width: '370px' }} className='mx-auto container mt-5 my-5 shadow-lg rounded-3 px-0 '>

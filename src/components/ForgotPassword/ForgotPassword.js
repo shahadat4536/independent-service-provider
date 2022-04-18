@@ -8,9 +8,16 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
-    // const handlePasswordReset = event => {
-    //     setEmail(event.target.value)
-    // }
+    const handlePasswordReset = async (event) => {
+        setEmail(event.target.value)
+        await sendPasswordResetEmail(email);
+        alert('Sent email')
+        event.preventDefault()
+
+    }
+
+
+
     return (
         <div style={{ width: '370px' }} className='mx-auto container mt-5 my-5 shadow-lg rounded-3 px-5 py-5 '>
 
@@ -19,10 +26,7 @@ const ForgotPassword = () => {
                     <Form.Control type="email" placeholder="Enter email" required />
                 </Form.Group>
                 <Button
-                    onClick={async () => {
-                        await sendPasswordResetEmail(email);
-                        alert('Sent email');
-                    }}
+                    onClick={handlePasswordReset}
                     className='w-100 text-white mt-3' variant="info" type="submit">
                     Reset Password
                 </Button>
