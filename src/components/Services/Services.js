@@ -13,7 +13,7 @@ const Services = () => {
     }, []);
     return (
         <div id='services'>
-            <h3 className='my-5 text-center '>Services</h3>
+            <h2 className='my-5 text-center text-info'>My Services</h2>
 
             <div className='row row-cols-1 row-cols-md-3 g-4 mx-auto mt-5 services '>
 

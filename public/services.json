@@ -2,21 +2,21 @@
     {
         "id": "625b071441657251e3874388",
         "name": "TAX & VAT",
-        "price": 500,
+        "price": 6000,
         "description": "I am a BDLC Legal and Associates Bangladesh Legal Consultor provides taxation services in Bangladesh with the help of our group of tax attorneys, tax lawyers, income tax attorneys, income tax practitioners, tax professionals, tax representatives and tax accountants in Bangladesh here to assist you for providing the top notch taxation services in Bangladesh.",
         "img": "https://i.ibb.co/mBmTGzS/05-Taxes.jpg"
     },
     {
         "id": "625b071415ce299b44a78626",
         "name": "Bankruptcy Claims",
-        "price": 500,
+        "price": 1000,
         "description": "COVID 19, and the economic challenges this has created, can cause difficulties for creditor companies in being repaid monies owed to them by their debtors. This is made more challenging when the debtors are located in other countries.",
         "img": "https://i.ibb.co/Nm5BLxr/02-Consumer-and-Business-Bankruptcy-Claims.jpg"
     },
     {
         "id": "625b0714b55c877d082c1ee9",
         "name": "Insurance Claims",
-        "price": 500,
+        "price": 5000,
         "description": "A claim filed against damage from covered perils is initially routed via phone or the internet to a representative of an insurer, typically an agent or claims adjuster. Unlike health insurance claims, the onus is on the policyholder to report damage to a deeded property he owns.",
         "img": "https://i.ibb.co/kBMmwC6/04-Insurance-and-Annuitiess.jpg"
     }

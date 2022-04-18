@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import Count from '../Count/Count';
+import Client from '../Client/Client';
 
 import Footer from '../Footer/Footer';
 import Services from '../Services/Services';
@@ -10,7 +10,7 @@ const Home = () => {
         <div id='home'>
             <Banner></Banner>
             <Services></Services>
-            <Count></Count>
+            <Client></Client>
             <Footer></Footer>
         </div>
     );

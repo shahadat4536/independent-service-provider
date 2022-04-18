@@ -16,13 +16,8 @@ const SocialSignIn = () => {
     let location = useLocation();
     let from = location?.state?.from?.pathname || "/";
     console.log(googleUser);
-    // let errorElement;
 
-    // console.log(googleError, githubError);
-    // if (googleError || githubError) {
-    //     errorElement = <p>Error:{googleError?.githubError}</p>;
-    // }
-
+    //redirect
     if (googleUser || githubUser) {
         navigate(from, { replace: true });
     }
@@ -30,9 +25,6 @@ const SocialSignIn = () => {
         <div className='d-flex justify-content-end'>
             <button onClick={() => signInWithGoogle()} className='btn btn-link'>
                 <img className='' src={google} width={'20px'} alt="" srcset="" />
-            </button>
-            <button className='btn btn-link'>
-                <img className='' src={facebook} width={'20px'} alt="" srcset="" />
             </button>
             <button onClick={() => signInWithGithub()} className='btn btn-link'>
                 <img className='' src={github} width={'20px'} alt="" srcset="" />

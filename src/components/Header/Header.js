@@ -1,12 +1,12 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar} from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     return (
         <Navbar className='sticky-top' bg="light" expand="lg">
@@ -19,15 +19,8 @@ const Header = () => {
                         <Nav.Link as={Link} to="home#services">Services</Nav.Link>
                         <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                         <Nav.Link as={Link} to="about">About</Nav.Link>
-                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown> */}
                     </Nav>
-                    <Nav>
+                    <Nav>{/* conditional signOut button */}
                         {user ?
                             <button onClick={() => signOut(auth)} className='border-0 bg-secondary bg-gradient text-white rounded-pill px-3'>Sign Out</button>
                             :
